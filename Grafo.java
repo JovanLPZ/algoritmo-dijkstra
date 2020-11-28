@@ -1,9 +1,6 @@
-package Grafos;
-
 import java.util.ArrayList;
 
 public class Grafo < T > {
-
 
     private ArrayList < Vertice < DatosV > > LVertices;
     private boolean Diri;
@@ -214,7 +211,8 @@ public class Grafo < T > {
         Diri = diri;
     }
 
-    public String toString() {
+    public String toString() 
+    {
         String Salida = " ";
         if (LVertices.size() > 0) {
             for (int v = 0; v < LVertices.size(); v++) {
@@ -230,3 +228,4 @@ public class Grafo < T > {
         }
         return Salida + "\nFin del listado\n\n";
     }
+}
