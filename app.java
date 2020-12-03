@@ -36,7 +36,7 @@ public class app
 		
 		do {
 			menu();
-			op = in.nextInt();
+			op = leer.nextInt();
 			switch(op) {
 			case 1:
 				AgregarV();
@@ -93,7 +93,7 @@ public class app
 			}
 		}while(op != 0);
 		System.out.println("\t PROGRAMA TERMINADO");
-		in.close();
+		leer.close();
 	}
 	
 	public static void menu() {
@@ -117,22 +117,22 @@ public class app
 	public static void AgregarA() {
 		System.out.println("* Agregar nueva Arista *");
 		System.out.println("Clave del vertice inicial: ");
-		int cveOri = in.nextInt();
+		int cveOri = leer.nextInt();
 		System.out.println("Clave del vertice destino: ");
-		int cveDes = in.nextInt();
+		int cveDes = leer.nextInt();
 		System.out.println("Cantida de viaticos: ");
-		float viaticos = in.nextFloat();
+		float viaticos = leer.nextFloat();
 		System.out.println("Demora en minutos para este proyecto: ");
-		float tiempo = in.nextFloat();
+		float tiempo = leer.nextFloat();
 		G.AddArista(cveOri, cveDes, new DatosA(viaticos, tiempo));
 		System.out.println("Arista agregado.");
 	}
 	
 	private static void RetirarA() {
 		System.out.println("* Eliminar arista *");
-		int cveOri = in.nextInt();
+		int cveOri = leer.nextInt();
 		System.out.println("Clave del vertice destino: ");
-		int cveDes = in.nextInt();
+		int cveDes = leer.nextInt();
 		try {
 			G.DelArista(cveOri, cveDes);
 		}catch (GrafoException e) {
@@ -143,7 +143,7 @@ public class app
 	private static void GradoVertice() {
 		System.out.println("* Grado del vertice *");
 		System.out.println("Clave del vertice: ");
-		int cve = in.nextInt();
+		int cve = leer.nextInt();
 		if(G.isDirigido()) {
 			System.out.println("El grado de entrada del vertice es: " + G.GradoEntrada(cve));
 			System.out.println("El grado de salida del vertice es: "+ G.GradoSalida(cve));
@@ -154,11 +154,11 @@ public class app
 	private static void AgregarV() {
 		System.out.println("* Agregar nuevo vertice *");
 		System.out.println("Clave del vertice: ");
-		int cve = in.nextInt();
+		int cve = leer.nextInt();
 		System.out.println("Nombre de la ciudad: ");
-		String city = in.next();
+		String city = leer.next();
 		System.out.println("Demora en minutos para esta ciudad: ");
-		float tiempo = in.nextFloat();
+		float tiempo = leer.nextFloat();
 		G.AddVertice(cve, new DatosV(city,tiempo));
 		System.out.println("Vertice agregado.");
 	}
@@ -166,7 +166,7 @@ public class app
 	private static void RetirarV() {
 		System.out.println("* Eliminar vertice *");
 		System.out.println("Clave del vertice: ");
-		int cve = in.nextInt();
+		int cve = leer.nextInt();
 		try {
 			G.DelVertice(cve);
 		}catch(GrafoException e) {
