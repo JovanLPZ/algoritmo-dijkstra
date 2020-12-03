@@ -61,11 +61,4 @@ public class Vertice<T>
 		return Path;
 	}
 
-    public void setPath(ArrayList<Vertice<T>> path) 
-    {
-		Path = new ArrayList<Vertice<T>>();
-		Path.addAll(path);
-		Path.add(this);
-    }
-    
-}
+
