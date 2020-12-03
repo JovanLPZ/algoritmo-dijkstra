@@ -188,23 +188,4 @@ public class Grafo
 		System.out.println(vertice.getCiudad() + ", ");
 	}
 	
-	public void MejorRecorrido(int claveVerticeOrigen, int claveVerticeDestino) throws GrafoException {
-		Recorrido('A', claveVerticeOrigen);
-		Vertice<DatosV> verticeDestino = LVertices.get(IndexOfV(claveVerticeDestino));
-		PrintPath(verticeDestino.getPath()); 
-		verticeDestino.getDatos(); 
-	}
-	
-	private void PrintPath(ArrayList<Vertice<DatosV>> path) {
-		for(int i = 0; i < path.size(); i++) {
-			DatosV datos = path.get(i).getDatos();
-			System.out.print(datos.getCiudad() + " (" + datos.getViaticos() + ", " + datos.getTiempo()  + "), ");
-		}
-		
-		path.forEach(vertice -> { 
-			DatosV datos = vertice.getDatos();
-			System.out.print(datos.getCiudad() + " (" + datos.getViaticos() + ", " + datos.getTiempo()  + "), ");
-		});
-		System.out.println();
-	}
-}
+
