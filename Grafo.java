@@ -1,18 +1,8 @@
 import java.util.ArrayList;
 
-
-/*
- //APP
-  Grafo grafo = getGrafo();
-  
-  lees datos del usario 
-  int cveOrigen = 0, cveDestino = 5;
-  
-  grafo.MejorRecorrido(cveOrigen, cveDestino);
-  
-*/
-public class Grafo {
-	private ArrayList<Vertice<DatosV>> LVertices;
+public class Grafo 
+{
+    private ArrayList<Vertice<DatosV>> LVertices;
 	private boolean Dirigido;
 	
 	public Grafo(boolean dirigido) {
@@ -217,5 +207,4 @@ public class Grafo {
 		});
 		System.out.println();
 	}
-	
 }

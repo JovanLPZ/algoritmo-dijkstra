@@ -1,5 +1,3 @@
-package Grafos;
-
 public class GrafoException extends Exception
 {
     private static final long serialVersionUID = 1L;
@@ -8,5 +6,5 @@ public class GrafoException extends Exception
     {
         super(message);
     }
-
+    
 }

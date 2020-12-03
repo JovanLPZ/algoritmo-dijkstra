@@ -1,29 +1,31 @@
-package Grafos;
-
-public class Arista<DatosA> {
-	
-	private int CveV;
+public class Arista<DatosA>
+{
+    private int CveV;
 	private DatosA Datos;
 	
-	public Arista(int ClaveVertice, DatosA datos) {
+    public Arista(int ClaveVertice, DatosA datos) 
+    {
 		CveV = ClaveVertice;
 		Datos = datos;
 	}
 
-	public int getCveV() {
+    public int getCveV() 
+    {
 		return CveV;
 	}
 
-	public void setCveV(int cveV) {
+    public void setCveV(int cveV) 
+    {
 		CveV = cveV;
 	}
 
-	public DatosA getDatos() {
+    public DatosA getDatos() 
+    {
 		return Datos;
 	}
 
-	public void setDatos(DatosA datos) {
+    public void setDatos(DatosA datos) 
+    {
 		Datos = datos;
 	}
-
 }
