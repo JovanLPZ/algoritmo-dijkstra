@@ -28,4 +28,5 @@ public class Arista<DatosA>
     {
 		Datos = datos;
 	}
+	
 }
