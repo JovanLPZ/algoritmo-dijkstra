@@ -6,7 +6,7 @@ public class app
     private static Scanner leer = new Scanner(System.in);
 	private static Grafo G;
 	
-    public static void main(String [] args) 
+    public static void main(String [] args) throws GrafoException 
     {
 		int op = -1;
 		G = new Grafo(false);
@@ -52,28 +52,28 @@ public class app
 				break;
 			case 5:
 				try {
-					G.Recorrido('p');
+					G.Recorrido('p', op);
 				}catch(GrafoException e) {
 					System.out.println(e.getMessage());
 				}
 				break;
 			case 6:
 				try {
-					G.Recorrido('a');
+					G.Recorrido('a', op);
 				}catch(GrafoException e) {
 					System.out.println(e.getMessage());
 				}
 				break;
-			case 7:
+		/*	case 7:
 				System.out.println(G);
 				System.out.println("Total de vertices en el grafo: " + G.getSize());
-				break;
+				break;*/
 			case 8:
-				GradoVertice();
+				//GradoVertice();
 				break;
 			case 9:
                 
-                Grafo grafo = getGrafo();
+                Grafo grafo = new Grafo(false);
 
                 System.out.println("Ingrese el inicio: ");               
                 int cveOrigen = leer.nextInt();  
@@ -139,7 +139,7 @@ public class app
 			System.out.println(e);
 		}
 	}
-	
+	/*
 	private static void GradoVertice() {
 		System.out.println("* Grado del vertice *");
 		System.out.println("Clave del vertice: ");
@@ -150,7 +150,7 @@ public class app
 		}else
 			System.out.println("El grado del vertice es: " + G.Grado(cve));
 	}
-	
+	*/
 	private static void AgregarV() {
 		System.out.println("* Agregar nuevo vertice *");
 		System.out.println("Clave del vertice: ");

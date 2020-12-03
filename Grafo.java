@@ -191,8 +191,8 @@ public class Grafo
 	public void MejorRecorrido(int claveVerticeOrigen, int claveVerticeDestino) throws GrafoException {
 		Recorrido('A', claveVerticeOrigen);
 		Vertice<DatosV> verticeDestino = LVertices.get(IndexOfV(claveVerticeDestino));
-		PrintPath(verticeDestino.getPath()); // TODO: imprimir path
-		verticeDestino.getDatos(); // datos totales
+		PrintPath(verticeDestino.getPath()); 
+		verticeDestino.getDatos(); 
 	}
 	
 	private void PrintPath(ArrayList<Vertice<DatosV>> path) {
