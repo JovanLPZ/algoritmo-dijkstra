@@ -58,7 +58,7 @@ public class Vertice<T>
 
     public ArrayList<Vertice<T>> getPath() 
     {
-		return Path;
+		return path;
 	}
 	
     public void setPath(ArrayList<Vertice<T>> path) 
