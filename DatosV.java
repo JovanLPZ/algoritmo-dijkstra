@@ -1,12 +1,11 @@
 package Grafos;
 
-public class DatosV
-{
-    private String Ciudad;
-    private float Tiempo;
-
-    public DatosV(String ciudad, float tiempo) 
-    {
+public class DatosV {
+	private String Ciudad;
+	private float Tiempo;
+	private float Viaticos;
+	
+	public DatosV(String ciudad, float tiempo) {
 		Ciudad = ciudad;
 		Tiempo = tiempo;
 	}
@@ -25,8 +24,17 @@ public class DatosV
 
 	public void setTiempo(float tiempo) {
 		Tiempo = tiempo;
-	}   
-    
-    
-    
+	}
+
+	public float getViaticos() {
+		return Viaticos;
+	}
+
+	public void setViaticos(float viaticos) {
+		Viaticos = viaticos;
+	}
+	
+	
+	
+	
 }
