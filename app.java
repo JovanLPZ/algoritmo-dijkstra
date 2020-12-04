@@ -103,13 +103,28 @@ public class app
 
 			case 9:
 
+			System.out.println("    \nVERTICES DEL GRAFO\n\nCLAVE:\t\t NOMBRE:");
+			G.imprimirVertices(G.getArrayVertices());
+
 			try
 			{
             	System.out.println("Ingrese el inicio: ");               
-            	int cveOrigen = leer.nextInt();  
+				int cveOrigen = leer.nextInt();  
+				
+				while( cveOrigen < 1 || cveOrigen > G.getArrayVertices().size() )
+				{
+					System.out.println("Ingrese un numero de inicio correcto: ");
+					cveOrigen = leer.nextInt(); 
+				}
                 
             	System.out.println("Ingrese el final: ");  
-            	int cveDestino = leer.nextInt();
+				int cveDestino = leer.nextInt();
+				
+				while( cveDestino < 1 || cveDestino > G.getArrayVertices().size() )
+				{
+					System.out.println("Ingrese un numero final correcto: ");
+					cveDestino = leer.nextInt(); 
+				}
                 
             	G.RutaOptima(cveOrigen, cveDestino);
 
@@ -120,6 +135,7 @@ public class app
 			{
 				System.out.println("\nNo se encontró una ruta entre ciudades indicadas");
 			}
+
 
 			break;
 

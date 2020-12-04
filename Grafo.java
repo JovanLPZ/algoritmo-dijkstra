@@ -50,6 +50,8 @@ public class Grafo
 		}
 	}
 	
+	
+	
 	private void RPA(int indInic, boolean esBasadoEnTim) 
 	{
 		PreparaInicioDeRecorrido();
@@ -303,10 +305,13 @@ public class Grafo
 	
 	private void PrintPath(ArrayList<Vertice<DatosV>> path) 
 	{
+		float T=0;
 		for(int i = 0; i < path.size(); i++) 
 		{
 			DatosV dat = path.get(i).getDatos();
-			System.out.print(dat.getCiudad() + " (" + dat.getTiempo()  + ")");
+			if((i-1) !=-1)
+			T=+path.get(i-1).getDatos().getTiempo();
+			System.out.print(dat.getCiudad() + " [" + (dat.getTiempo()-T)  + "]");
 			
 			if((i+1) < path.size())
 			{
@@ -337,6 +342,17 @@ public class Grafo
 		}
 			return S + "\nFin del listado\n\n";
 	    }
+
+	public ArrayList<Vertice<DatosV>> getArrayVertices() {
+		return ArrayVertices;
+	}
+	
+	public void imprimirVertices(ArrayList<Vertice<DatosV>> lVertices) {
+		for (int i = 0; i < lVertices.size(); i++) {
+			System.out.println(lVertices.get(i).getCve()+" \t\t "+lVertices.get(i).getDatos().getCiudad());
+		}
+		System.out.println("\n");
+	}
 	
 }
 
