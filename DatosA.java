@@ -1,3 +1,5 @@
+package Grafos;
+
 public class DatosA 
 {
     private float Viaticos;

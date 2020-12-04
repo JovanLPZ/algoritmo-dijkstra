@@ -1,3 +1,5 @@
+package Grafos;
+
 public class Arista<DatosA>
 {
     private int CveV;
@@ -29,4 +31,5 @@ public class Arista<DatosA>
 		Datos = datos;
 	}
 }
+
 

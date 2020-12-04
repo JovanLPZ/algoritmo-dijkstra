@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Grafos;
 
 import java.util.Scanner;
 
@@ -174,5 +174,3 @@ public class app
 	}
 
 }
-
-
