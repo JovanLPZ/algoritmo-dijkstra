@@ -1,5 +1,3 @@
-package Grafos;
-
 import java.util.Scanner;
 
 public class app

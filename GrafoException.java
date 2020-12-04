@@ -1,4 +1,4 @@
-package Grafos;
+
 
 public class GrafoException extends Exception{
 
