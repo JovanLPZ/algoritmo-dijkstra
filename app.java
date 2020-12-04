@@ -9,8 +9,8 @@ public class app
     public static void main(String [] args) throws GrafoException 
     {
 		int menu = -1;
-		
-		G = new Grafo(true);
+
+		G = new Grafo(false);
 		
 		
 		G.AddVertice(1, new DatosV("Baja California",0)); 
