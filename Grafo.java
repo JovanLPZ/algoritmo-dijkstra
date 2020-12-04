@@ -282,15 +282,12 @@ public class Grafo
 	    return Dirigido;
 	}
 
-	public void setDirigido(boolean d) 
-	{
-	    Dirigido = d;
-	}
 	
 	public void RutaOptima(int claveVerticeO, int claveVerticeD) throws GrafoException 
 	{
 		Vertice<DatosV> verticeO = ArrayVertices.get(IndexOfV(claveVerticeO));
 		Vertice<DatosV> verticeD = ArrayVertices.get(IndexOfV(claveVerticeD));
+
 		try 
 		{
 			Recorrido('A', claveVerticeO);
@@ -310,7 +307,7 @@ public class Grafo
 		{
 			DatosV dat = path.get(i).getDatos();
 			if((i-1) !=-1)
-			T=+path.get(i-1).getDatos().getTiempo();
+			T=path.get(i-1).getDatos().getTiempo();
 			System.out.print(dat.getCiudad() + " [" + (dat.getTiempo()-T)  + "]");
 			
 			if((i+1) < path.size())
@@ -321,34 +318,15 @@ public class Grafo
 		}
 	}
 	
-	public String toString() 
-	{
-	    String S = " ";
-		if (ArrayVertices.size() > 0) 
-		{
-			for (int v = 0; v < ArrayVertices.size(); v++) 
-			{
-	            S += ArrayVertices.get(v).getCve() + " : " + ArrayVertices.get(v).getDatos().getCiudad() + " : ";
-				if (ArrayVertices.get(v).getAdyacentes().size() > 0) 
-				{
-					for (int a = 0; a < ArrayVertices.get(v).getAdyacentes().size(); a++) 
-					{
-						S += ArrayVertices.get(v).getAdyacentes().get(a).getCveV() + " : " + 
-						ArrayVertices.get(IndexOfV(ArrayVertices.get(v).getAdyacentes().get(a).getCveV())).getDatos().getCiudad() + ", ";
-	                }
-				}
-					S += '\n';
-	        }
-		}
-			return S + "\nFin del listado\n\n";
-	    }
 
 	public ArrayList<Vertice<DatosV>> getArrayVertices() {
 		return ArrayVertices;
 	}
 	
-	public void imprimirVertices(ArrayList<Vertice<DatosV>> lVertices) {
-		for (int i = 0; i < lVertices.size(); i++) {
+	public void imprimirVertices(ArrayList<Vertice<DatosV>> lVertices) 
+	{
+		for (int i = 0; i < lVertices.size(); i++) 
+		{
 			System.out.println(lVertices.get(i).getCve()+" \t\t "+lVertices.get(i).getDatos().getCiudad());
 		}
 		System.out.println("\n");

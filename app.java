@@ -9,17 +9,17 @@ public class app
     public static void main(String [] args) throws GrafoException 
     {
 		int menu = -1;
+		
 		G = new Grafo(true);
 		
-		//agregar datos
-		//Grafo de ejemplificacion
-		G.AddVertice(1, new DatosV("Baja California",0)); //
+		
+		G.AddVertice(1, new DatosV("Baja California",0)); 
 		G.AddVertice(2, new DatosV("Durango",0));       
-		G.AddVertice(3, new DatosV("Sonora",0));		//
+		G.AddVertice(3, new DatosV("Sonora",0));		
 		G.AddVertice(4, new DatosV("Monterrey",0));		
 		G.AddVertice(5, new DatosV("Sinaloa",0));
-		G.AddVertice(6, new DatosV("Veracruz",0));		//
-		G.AddVertice(7, new DatosV("Yucatan",0));		//
+		G.AddVertice(6, new DatosV("Veracruz",0));		
+		G.AddVertice(7, new DatosV("Yucatan",0));		
 		G.AddArista(1,2, new DatosA(0,13));
 		G.AddArista(1,3, new DatosA(0,11));
 		G.AddArista(2,4, new DatosA(0,8));
@@ -106,6 +106,7 @@ public class app
 			System.out.println("    \nVERTICES DEL GRAFO\n\nCLAVE:\t\t NOMBRE:");
 			G.imprimirVertices(G.getArrayVertices());
 
+
 			try
 			{
             	System.out.println("Ingrese el inicio: ");               
@@ -135,7 +136,7 @@ public class app
 			{
 				System.out.println("\nNo se encontró una ruta entre ciudades indicadas");
 			}
-
+			
 
 			break;
 
@@ -171,7 +172,9 @@ public class app
 		System.out.print("Opcion: ");
 	}
 	
-	//METODOS QUE DE SEGURO VAN EN LA CLASE Grafo.java
+
+
+	
 	public static void AgregarA() {
 		System.out.println("* Agregar nueva Arista *");
 		System.out.println("Clave del vertice inicial: ");
