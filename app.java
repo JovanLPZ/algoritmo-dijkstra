@@ -94,7 +94,7 @@ public class app
 	}
 	
 	public static void menu() {
-		System.out.println("\t M E N U");
+		System.out.println("\n M E N U");
 		System.out.println();
 		System.out.println("1.- Agregar vertice");
 		System.out.println("2.- Retirar vertice");
