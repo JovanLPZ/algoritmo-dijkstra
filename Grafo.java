@@ -76,7 +76,7 @@ public class Grafo {
 	private void RPA(int initialIndex, boolean isBasedTime) {
 		PreparaInicioDeRecorrido();
 		if(LVertices.size() > 0) {
-			Vertice<DatosV> rootVertice = LVertices.get(initialIndex);
+			Vertice<DatosV> rootVertice = LVertices.get(IndexOfV(initialIndex));
 			DatosV datosRootVertice = rootVertice.getDatos();
 			//Visitar(datosRootVertice);
 			rootVertice.setVisitado(true);
@@ -114,12 +114,7 @@ public class Grafo {
 							connectedDatosVertice.setTiempo(currentVertice.getDatos().getTiempo() + currentArista.getDatos().getTiempo());
 							connectedVertice.setPath(currentVertice.getPath());
 					    }
-						/*
-						if (isBasedTime && connectedNode.Time > currentNode.Time + arista.Time) {
-							connectedNode.Time = currentNode.Time + arista.Time;
-							connectedNode.AssignPath(currentNode.Path);
-					    }
-					    */
+						
 					}	
 				}
 				v = ColaRet();
@@ -252,12 +247,6 @@ public class Grafo {
 			System.out.print(datos.getCiudad() + " (" + datos.getViaticos() + ", " + datos.getTiempo()  + "), ");
 		}
 		
-		path.forEach(vertice -> { 
-			DatosV datos = vertice.getDatos();
-			System.out.print(datos.getCiudad() + " (" + datos.getViaticos() + ", " + datos.getTiempo()  + "), ");
-		});
-		System.out.println();
 	}
-	
 }
 
