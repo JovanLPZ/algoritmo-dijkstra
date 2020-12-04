@@ -1,72 +1,59 @@
 import java.util.ArrayList;
+public class Vertice<T> {
 
-public class Vertice<T>
-{
-    private int Cve;
+	private int Cve;
 	private boolean Visitado;
 	private T Datos;
 	private ArrayList<Arista<DatosA>> Adyacentes;
 	private ArrayList<Vertice<T>> path;
 	
-    public Vertice(int cve, T datos) 
-    {
+	public Vertice(int cve, T datos) {
 		Cve = cve;
 		Datos = datos;
 		Visitado = false;
 		Adyacentes = new ArrayList<Arista<DatosA>>();
 	}
 	
-    public boolean isVisitado() 
-    {
+	public boolean isVisitado() {
 		return Visitado;
 	}
 	
-    public void setVisitado(boolean visitado) 
-    {
+	public void setVisitado(boolean visitado) {
 		Visitado = visitado;
 	}
 
-    public int getCve() 
-    {
+	public int getCve() {
 		return Cve;
 	}
 
-    public void setCve(int cve) 
-    {
+	public void setCve(int cve) {
 		Cve = cve;
 	}
 
-    public T getDatos() 
-    {
+	public T getDatos() {
 		return Datos;
 	}
 
-    public void setDatos(T datos) 
-    {
+	public void setDatos(T datos) {
 		Datos = datos;
 	}
 
-    public ArrayList<Arista<DatosA>> getAdyacentes() 
-    {
+	public ArrayList<Arista<DatosA>> getAdyacentes() {
 		return Adyacentes;
 	}
 
-    public void setAdyacentes(ArrayList<Arista<DatosA>> adyacentes) 
-    {
+	public void setAdyacentes(ArrayList<Arista<DatosA>> adyacentes) {
 		Adyacentes = adyacentes;
 	}
 
-    public ArrayList<Vertice<T>> getPath() 
-    {
+	public ArrayList<Vertice<T>> getPath() {
 		return path;
 	}
-	
-    public void setPath(ArrayList<Vertice<T>> path) 
-    {
+
+	public void setPath(ArrayList<Vertice<T>> path) {
 		this.path = new ArrayList<Vertice<T>>();
 		this.path.addAll(path);
 		this.path.add(this);
-    }
-    
+	}
+	
 }
-
