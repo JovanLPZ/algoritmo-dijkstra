@@ -111,7 +111,7 @@ public class app
             	System.out.println("Ingrese el final: ");  
             	int cveDestino = leer.nextInt();
                 
-            	G.MejorRecorrido(cveOrigen, cveDestino);
+            	G.RutaOptima(cveOrigen, cveDestino);
 
 				System.out.println("\n");
 			}
@@ -176,7 +176,7 @@ public class app
 		System.out.println("Clave del vertice destino: ");
 		int cveDes = leer.nextInt();
 		try {
-			G.DelArista(cveOri, cveDes);
+			G.DArista(cveOri, cveDes);
 		}catch (GrafoException e) {
 			System.out.println(e);
 		}
@@ -210,7 +210,7 @@ public class app
 		System.out.println("Clave del vertice: ");
 		int cve = leer.nextInt();
 		try {
-			G.DelVertice(cve);
+			G.DVertice(cve);
 		}catch(GrafoException e) {
 			System.out.println(e);
 		}
