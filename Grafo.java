@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 
-public class Grafo 
-{
-    private ArrayList<Vertice<DatosV>> LVertices;
+public class Grafo {
+	private ArrayList<Vertice<DatosV>> LVertices;
 	private boolean Dirigido;
 	
 	public Grafo(boolean dirigido) {
@@ -187,11 +186,64 @@ public class Grafo
 	private static void Visitar(DatosV vertice) {
 		System.out.println(vertice.getCiudad() + ", ");
 	}
-		public void MejorRecorrido(int claveVerticeOrigen, int claveVerticeDestino) throws GrafoException {
+	
+	 public int getSize() {
+	        return LVertices.size();
+	    }
+
+	    public int Grado(int CveVert) {
+	        return LVertices.get(IndexOfV(CveVert)).getAdyacentes().size();
+	    }
+
+	    public int GradoSalida(int CveVert) {
+	        return LVertices.get(IndexOfV(CveVert)).getAdyacentes().size();
+	    }
+
+	    public int GradoEntrada(int CveVert) {
+	        int grado = 0;
+	        if (LVertices.size() > 0) {
+	            for (int v = 0; v < LVertices.size(); v++) {
+	                ArrayList < Arista < DatosA > > Ady = LVertices.get(v).getAdyacentes();
+	                for (int a = 0; a < Ady.size(); a++) {
+	                    if (Ady.get(a).getCveV() == CveVert) {
+	                        grado++;
+	                    }
+	                }
+	            }
+	        }
+	        return grado;
+	    }
+
+	    public boolean isDirigido() {
+	        return Dirigido;
+	    }
+
+	    public void setDirigido(boolean diri) {
+	        Dirigido = diri;
+	    }
+
+	    public String toString() {
+	        String Salida = " ";
+	        if (LVertices.size() > 0) {
+	            for (int v = 0; v < LVertices.size(); v++) {
+	                Salida += LVertices.get(v).getCve() + " : " + LVertices.get(v).getDatos().getCiudad() + "  --> ";
+	                if (LVertices.get(v).getAdyacentes().size() > 0) {
+	                    for (int a = 0; a < LVertices.get(v).getAdyacentes().size(); a++) {
+	                        Salida += LVertices.get(v).getAdyacentes().get(a).getCveV() + " : " + LVertices
+	                            .get(IndexOfV(LVertices.get(v).getAdyacentes().get(a).getCveV())).getDatos().getCiudad() + " , ";
+	                    }
+	                }
+	                Salida += '\n';
+	            }
+	        }
+	        return Salida + "\nFin del listado\n\n";
+	    }
+	
+	public void MejorRecorrido(int claveVerticeOrigen, int claveVerticeDestino) throws GrafoException {
 		Recorrido('A', claveVerticeOrigen);
 		Vertice<DatosV> verticeDestino = LVertices.get(IndexOfV(claveVerticeDestino));
-		PrintPath(verticeDestino.getPath()); 
-		verticeDestino.getDatos(); 
+		PrintPath(verticeDestino.getPath()); // TODO: imprimir path
+		verticeDestino.getDatos(); // datos totales
 	}
 	
 	private void PrintPath(ArrayList<Vertice<DatosV>> path) {
@@ -206,5 +258,6 @@ public class Grafo
 		});
 		System.out.println();
 	}
+	
 }
 
