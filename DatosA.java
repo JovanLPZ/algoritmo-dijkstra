@@ -6,7 +6,7 @@ public class DatosA
     public DatosA(float viaticos, float tiempo) 
     {
 		Viaticos = viaticos;
-		Tiempo = tiempo;
+		this.Tiempo = tiempo;
 	}
 
     public float getViaticos() 
@@ -16,7 +16,7 @@ public class DatosA
 
     public void setViaticos(float viaticos) 
     {
-		Viaticos = viaticos;
+		this.Viaticos = viaticos;
 	}
 
     public float getTiempo() 
@@ -26,6 +26,6 @@ public class DatosA
 
     public void setTiempo(float tiempo) 
     {
-		Tiempo = tiempo;
+		this.Tiempo = tiempo;
 	}
 }
