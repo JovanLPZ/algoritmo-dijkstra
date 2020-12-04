@@ -13,13 +13,13 @@ public class app
 		
 		//agregar datos
 		//Grafo de ejemplificacion
-		G.AddVertice(1, new DatosV("Baja California",0));
-		G.AddVertice(2, new DatosV("Durango",0));
-		G.AddVertice(3, new DatosV("Sonora",0));
-		G.AddVertice(4, new DatosV("Monterrey",0));
+		G.AddVertice(1, new DatosV("Baja California",0)); //
+		G.AddVertice(2, new DatosV("Durango",0));       
+		G.AddVertice(3, new DatosV("Sonora",0));		//
+		G.AddVertice(4, new DatosV("Monterrey",0));		
 		G.AddVertice(5, new DatosV("Sinaloa",0));
-		G.AddVertice(6, new DatosV("Veracruz",0));
-		G.AddVertice(7, new DatosV("Yucatan",0));
+		G.AddVertice(6, new DatosV("Veracruz",0));		//
+		G.AddVertice(7, new DatosV("Yucatan",0));		//
 		G.AddArista(1,2, new DatosA(0,13));
 		G.AddArista(1,3, new DatosA(0,11));
 		G.AddArista(2,4, new DatosA(0,8));
@@ -80,7 +80,7 @@ public class app
                 
                 G.MejorRecorrido(cveOrigen, cveDestino);
 
-				System.out.println("");
+				System.out.println("\n");
 				break;
 			case 0:
 				System.out.println("\tADIOS");
