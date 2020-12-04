@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-public class app
+import java.util.Scanner;
+
+public class appGrafo
 {
 
     private static Scanner leer = new Scanner(System.in);
@@ -64,24 +66,21 @@ public class app
 					System.out.println(e.getMessage());
 				}
 				break;
-		/*	case 7:
+			case 7:
 				System.out.println(G);
-				System.out.println("Total de vertices en el grafo: " + G.getSize());
-				break;*/
+			    System.out.println("Total de vertices en el grafo: " + G.getSize());
+				break;
 			case 8:
-				//GradoVertice();
+				GradoVertice();
 				break;
 			case 9:
-                
-                Grafo grafo = new Grafo(false);
-
-                System.out.println("Ingrese el inicio: ");               
+                 System.out.println("Ingrese el inicio: ");               
                 int cveOrigen = leer.nextInt();  
                 
                 System.out.println("Ingrese el final: ");  
                 int cveDestino = leer.nextInt();
                 
-                grafo.MejorRecorrido(cveOrigen, cveDestino);
+                G.MejorRecorrido(cveOrigen, cveDestino);
 
 				System.out.println("");
 				break;
@@ -139,7 +138,7 @@ public class app
 			System.out.println(e);
 		}
 	}
-	/*
+	
 	private static void GradoVertice() {
 		System.out.println("* Grado del vertice *");
 		System.out.println("Clave del vertice: ");
@@ -150,7 +149,7 @@ public class app
 		}else
 			System.out.println("El grado del vertice es: " + G.Grado(cve));
 	}
-	*/
+	
 	private static void AgregarV() {
 		System.out.println("* Agregar nuevo vertice *");
 		System.out.println("Clave del vertice: ");
@@ -175,3 +174,4 @@ public class app
 	}
 
 }
+
