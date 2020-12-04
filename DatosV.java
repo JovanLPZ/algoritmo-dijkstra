@@ -4,10 +4,15 @@ public class DatosV
 	private float Tiempo;
 	private float Viaticos;
 	
-    public DatosV(String ciudad, float tiempo) 
+	public DatosV(String ciudad) 
     {
 		Ciudad = ciudad;
-		Tiempo = tiempo;
+		Tiempo = 0;
+	}
+	public DatosV(String ciudad, float tiempo) 
+    {
+		Ciudad = ciudad;
+		this.Tiempo = tiempo;
 	}
 
     public String getCiudad() 
@@ -27,7 +32,7 @@ public class DatosV
 
     public void setTiempo(float tiempo) 
     {
-		Tiempo = tiempo;
+		this.Tiempo = tiempo;
 	}
 
     public float getViaticos() 
@@ -37,6 +42,6 @@ public class DatosV
 
     public void setViaticos(float viaticos) 
     {
-		Viaticos = viaticos;
+		this.Viaticos = viaticos;
 	}
 }
