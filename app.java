@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 import java.util.Scanner;
 
-public class appGrafo
+public class app
 {
 
     private static Scanner leer = new Scanner(System.in);
@@ -174,4 +174,5 @@ public class appGrafo
 	}
 
 }
+
 
