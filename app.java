@@ -8,8 +8,8 @@ public class app
 	
     public static void main(String [] args) throws GrafoException 
     {
-		int op = -1;
-		G = new Grafo(false);
+		int menu = -1;
+		G = new Grafo(true);
 		
 		//agregar datos
 		//Grafo de ejemplificacion
@@ -34,62 +34,107 @@ public class app
 		
 		
 		
-		do {
+		do 
+		{
+
 			menu();
-			op = leer.nextInt();
-			switch(op) {
+
+			menu = leer.nextInt();
+			switch(menu) {
 			case 1:
+
 				AgregarV();
-				break;
+
+			break;
+
 			case 2:
-				RetirarV();
-				break;
+
+			RetirarV();
+			break;
+
 			case 3:
-				AgregarA();
-				break;
+
+			AgregarA();
+			break;
+
 			case 4: 
-				RetirarA();
-				break;
+
+			RetirarA();
+
+			break;
+
 			case 5:
-				try {
-					G.Recorrido('p', op);
-				}catch(GrafoException e) {
-					System.out.println(e.getMessage());
-				}
-				break;
+			try
+			{
+				G.Recorrido('p', menu);
+			}
+
+			catch(GrafoException e) 
+			{
+				System.out.println(e.getMessage());
+			}
+
+			break;
+
 			case 6:
-				try {
-					G.Recorrido('a', op);
-				}catch(GrafoException e) {
-					System.out.println(e.getMessage());
-				}
-				break;
+			try
+			{
+				G.Recorrido('a', menu);
+			}
+			catch(GrafoException e) 
+			{
+				System.out.println(e.getMessage());
+			}
+
+			break;
+
 			case 7:
+
 				System.out.println(G);
-			    System.out.println("Total de vertices en el grafo: " + G.getSize());
-				break;
+				System.out.println("Total de vertices en el grafo: " + G.getSize());
+
+			break;
+
 			case 8:
-				GradoVertice();
-				break;
+
+			GradoVertice();
+
+			break;
+
 			case 9:
-                 System.out.println("Ingrese el inicio: ");               
-                int cveOrigen = leer.nextInt();  
+
+			try
+			{
+            	System.out.println("Ingrese el inicio: ");               
+            	int cveOrigen = leer.nextInt();  
                 
-                System.out.println("Ingrese el final: ");  
-                int cveDestino = leer.nextInt();
+            	System.out.println("Ingrese el final: ");  
+            	int cveDestino = leer.nextInt();
                 
-                G.MejorRecorrido(cveOrigen, cveDestino);
+            	G.MejorRecorrido(cveOrigen, cveDestino);
 
 				System.out.println("\n");
-				break;
+			}
+
+			catch(Exception e)
+			{
+				System.out.println("\nNo se encontró una ruta entre ciudades indicadas");
+			}
+
+			break;
+
 			case 0:
-				System.out.println("\tADIOS");
-				break;
+
+			System.out.println("\n");
+
+			break;
+
 			default:
 				System.out.println("Opcion no valida.");
 			}
-		}while(op != 0);
-		System.out.println("\t PROGRAMA TERMINADO");
+
+		} while(menu != 0);
+
 		leer.close();
 	}
 	

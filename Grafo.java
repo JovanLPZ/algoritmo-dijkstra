@@ -235,7 +235,7 @@ public class Grafo {
 			Recorrido('A', claveVerticeOrigen);
 			
 			PrintPath(verticeDestino.getRuta());
-			System.out.println("\n\nTiempo total: "+verticeDestino.getDatos().getTiempo());
+			System.out.println("\n\nTiempo de viaje: "+verticeDestino.getDatos().getTiempo());
 			
 		}catch(Exception e){
 			System.out.print("No existe ruta entre "+ verticeOrigen.getDatos().getCiudad() + " y " + verticeDestino.getDatos().getCiudad()+"\n");
